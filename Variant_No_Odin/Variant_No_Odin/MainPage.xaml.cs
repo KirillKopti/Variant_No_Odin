@@ -74,7 +74,11 @@ namespace Variant_No_Odin
             gr.Children.Add(picker, 1, 0);
             Content = gr;
 
+            img = new Image();
+            gr.Children.Add(img, 3, 1);
 
+            entry = new Entry { Text = "Выбери день" };
+            gr.Children.Add(entry, 3, 2);
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
