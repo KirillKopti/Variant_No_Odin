@@ -72,18 +72,17 @@ namespace Variant_No_Odin
             picker.Items.Add("Kardla");
             picker.Items.Add("Paide");
             gr.Children.Add(picker, 1, 0);
+
+            entry = new Entry { Text = "Vali kuupäev" };
+            gr.Children.Add(entry, 0, 1);
+
             Content = gr;
 
-            img = new Image();
-            gr.Children.Add(img, 3, 1);
-
-            entry = new Entry { Text = "Выбери день" };
-            gr.Children.Add(entry, 3, 2);
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+            entry.Text = "Sinu kuupäev:" + e.NewDate.ToString("G");
         }
     }
 }
