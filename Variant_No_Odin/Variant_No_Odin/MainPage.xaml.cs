@@ -11,7 +11,7 @@ namespace Variant_No_Odin
     public partial class MainPage : ContentPage
     {
         Picker picker, picker2;
-        Editor editor;
+        Entry entry;
         Image img;
         public MainPage()
         {
@@ -40,7 +40,7 @@ namespace Variant_No_Odin
             picker.Items.Add("Jõgevamaa");
             picker.Items.Add("Lääne-Virumaa");
             picker.Items.Add("Läänemaa");
-            picker.Items.Add("Polvamaa");
+            picker.Items.Add("Põlvamaa");
             picker.Items.Add("Pärnumaa");
             picker.Items.Add("Raplamaa");
             picker.Items.Add("Saaremaa");
@@ -75,11 +75,12 @@ namespace Variant_No_Odin
             picker2.SelectedIndexChanged += Picker2_SelectedIndexCahanged;
             gr.Children.Add(picker2, 1, 0);
 
-            editor = new Editor { Placeholder = "Vali keel \n nimikirjast" };
-            gr.Children.Add(editor, 2, 0);
+            entry = new Entry { Text = "Vali kuupäev \n " };
+            gr.Children.Add(entry, 2, 0);
 
-            img = new Image();
+            Image img = new Image { Source = "Harjumaa.jpg" };
             gr.Children.Add(img, 3, 2);
+
 
             Content = gr;
 
@@ -92,8 +93,10 @@ namespace Variant_No_Odin
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            editor.Text = "Oli vakitud: " + picker.Items[picker.SelectedIndex];
+            entry.Text = "Oli vakitud: " + picker.Items[picker.SelectedIndex];
             picker2.SelectedIndex = picker.SelectedIndex;
+            
+
         }
     }
 }
