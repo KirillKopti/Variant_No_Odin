@@ -51,7 +51,7 @@ namespace Variant_No_Odin
 
             picker.SelectedIndexChanged += Picker_SelectedIndexChanged;
             gr.Children.Add(picker, 0, 0);
-
+            Grid.SetColumnSpan(picker,1);
             picker2 = new Picker
             {
                 Title = "Kapital"
@@ -74,13 +74,15 @@ namespace Variant_No_Odin
 
             picker2.SelectedIndexChanged += Picker2_SelectedIndexCahanged;
             gr.Children.Add(picker2, 1, 0);
+            Grid.SetColumnSpan(picker2, 1);
 
             entry = new Entry { Text = "Vali kuupäev \n " };
-            gr.Children.Add(entry, 2, 0);
+            gr.Children.Add(entry, 3, 0);
+            Grid.SetColumnSpan(entry, 1);
 
-            Image img = new Image { Source = "Harjumaa.jpg" };
-            gr.Children.Add(img, 3, 2);
-
+            img = new Image();
+            gr.Children.Add(img, 2, 0);
+            Grid.SetColumnSpan(img, 1);
 
             Content = gr;
 
@@ -89,13 +91,13 @@ namespace Variant_No_Odin
         private void Picker2_SelectedIndexCahanged(object sender, EventArgs e)
         {
             picker.SelectedIndex = picker2.SelectedIndex;
+            img = new Image { Source = "" };
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
             entry.Text = "Oli vakitud: " + picker.Items[picker.SelectedIndex];
             picker2.SelectedIndex = picker.SelectedIndex;
-            
 
         }
     }
