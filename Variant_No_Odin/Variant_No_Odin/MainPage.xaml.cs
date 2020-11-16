@@ -10,8 +10,8 @@ namespace Variant_No_Odin
 {
     public partial class MainPage : ContentPage
     {
-        Picker picker;
-        Entry entry;
+        Picker picker, picker2;
+        Editor editor;
         Image img;
         public MainPage()
         {
@@ -52,37 +52,44 @@ namespace Variant_No_Odin
             picker.SelectedIndexChanged += Picker_SelectedIndexChanged;
             gr.Children.Add(picker, 0, 0);
 
-            picker = new Picker
+            picker2 = new Picker
             {
                 Title = "Kapital"
             };
-            picker.Items.Add("Vala");
-            picker.Items.Add("Viljandi");
-            picker.Items.Add("Võru");
-            picker.Items.Add("Jyhvi");
-            picker.Items.Add("Jõgeva");
-            picker.Items.Add("Rakveres");
-            picker.Items.Add("Haapsalu");
-            picker.Items.Add("Põlva");
-            picker.Items.Add("Pärnu");
-            picker.Items.Add("Rapla");
-            picker.Items.Add("Kuressaare");
-            picker.Items.Add("Tartu");
-            picker.Items.Add("Tallinn");
-            picker.Items.Add("Kardla");
-            picker.Items.Add("Paide");
-            gr.Children.Add(picker, 1, 0);
+            picker2.Items.Add("Vala");
+            picker2.Items.Add("Viljandi");
+            picker2.Items.Add("Võru");
+            picker2.Items.Add("Jyhvi");
+            picker2.Items.Add("Jõgeva");
+            picker2.Items.Add("Rakveres");
+            picker2.Items.Add("Haapsalu");
+            picker2.Items.Add("Põlva");
+            picker2.Items.Add("Pärnu");
+            picker2.Items.Add("Rapla");
+            picker2.Items.Add("Kuressaare");
+            picker2.Items.Add("Tartu");
+            picker2.Items.Add("Tallinn");
+            picker2.Items.Add("Kardla");
+            picker2.Items.Add("Paide");
 
-            entry = new Entry { Text = "Vali kuupäev" };
-            gr.Children.Add(entry, 2, 0);
+            picker2.SelectedIndexChanged += Picker2_SelectedIndexCahanged;
+            gr.Children.Add(picker2, 1, 0);
+
+            Image img = new Image();
 
             Content = gr;
 
         }
 
+        private void Picker2_SelectedIndexCahanged(object sender, EventArgs e)
+        {
+            picker.SelectedIndex = picker2.SelectedIndex;
+        }
+
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            editor.Text = "Oli vakitud: " + picker.Items[picker.SelectedIndex];
+            picker2.SelectedIndex = picker.SelectedIndex;
         }
     }
 }
