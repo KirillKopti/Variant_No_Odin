@@ -74,7 +74,7 @@ namespace Variant_No_Odin
             gr.Children.Add(picker, 1, 0);
 
             entry = new Entry { Text = "Vali kuupäev" };
-            gr.Children.Add(entry, 0, 1);
+            gr.Children.Add(entry, 2, 0);
 
             Content = gr;
 
@@ -82,7 +82,7 @@ namespace Variant_No_Odin
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            entry.Text = "Sinu kuupäev:" + e.NewDate.ToString("G");
+            
         }
     }
 }
