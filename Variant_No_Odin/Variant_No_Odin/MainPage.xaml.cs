@@ -56,26 +56,30 @@ namespace Variant_No_Odin
             {
                 Title = "Kapital"
             };
-            picker2.Items.Add("Vala");
+            picker2.Items.Add("Valga");
             picker2.Items.Add("Viljandi");
             picker2.Items.Add("Võru");
             picker2.Items.Add("Jyhvi");
             picker2.Items.Add("Jõgeva");
-            picker2.Items.Add("Rakveres");
+            picker2.Items.Add("Rakvere");
             picker2.Items.Add("Haapsalu");
             picker2.Items.Add("Põlva");
             picker2.Items.Add("Pärnu");
             picker2.Items.Add("Rapla");
-            picker2.Items.Add("Kuressaare");
+            picker2.Items.Add("Kuresaare");
             picker2.Items.Add("Tartu");
             picker2.Items.Add("Tallinn");
-            picker2.Items.Add("Kardla");
+            picker2.Items.Add("Kärdla");
             picker2.Items.Add("Paide");
 
             picker2.SelectedIndexChanged += Picker2_SelectedIndexCahanged;
             gr.Children.Add(picker2, 1, 0);
 
-            Image img = new Image();
+            editor = new Editor { Placeholder = "Vali keel \n nimikirjast" };
+            gr.Children.Add(editor, 2, 0);
+
+            img = new Image();
+            gr.Children.Add(img, 3, 2);
 
             Content = gr;
 
