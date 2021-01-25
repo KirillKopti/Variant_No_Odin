@@ -91,14 +91,71 @@ namespace Variant_No_Odin
         private void Picker2_SelectedIndexCahanged(object sender, EventArgs e)
         {
             picker.SelectedIndex = picker2.SelectedIndex;
-            img = new Image { Source = "" };
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            entry.Text = "Oli vakitud: " + picker.Items[picker.SelectedIndex];
             picker2.SelectedIndex = picker.SelectedIndex;
-
+             if (picker2.SelectedIndex ==0 )
+            {
+              img.Source = "Valgamaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 1)
+            {
+              img.Source = "Viljandimaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 2)
+            {
+              img.Source = "Vorumaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 3)
+            {
+              img.Source = "Ida_Virumaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 4)
+            {
+              img.Source = "Jogevamaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 5)
+            {
+              img.Source = "Laane_Virumaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 6)
+            {
+              img.Source = "Laanemaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 7)
+            {
+              img.Source = "Polvamaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 8)
+            {
+              img.Source = "Parnumaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 9)
+            {
+              img.Source = "Raplamaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 10)
+            {
+              img.Source = "Saaremaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 11)
+            {
+              img.Source = "Tartumaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 12)
+            {
+              img.Source = "Harjumaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 13)
+            {
+              img.Source = "Hiiumaa.jpg";
+            }
+            else if (picker2.SelectedIndex == 14)
+            {
+              img.Source = "Jarvamaa.jpg";
+            }
         }
     }
 }
